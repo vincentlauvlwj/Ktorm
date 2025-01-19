@@ -19,7 +19,7 @@ subprojects {
         dependsOn("codegen")
 
         dokkaSourceSets.named("main") {
-            suppressGeneratedFiles.set(false)
+            suppressGeneratedFiles = false
         }
     }
 
@@ -34,11 +34,11 @@ subprojects {
         }
 
         dokkaSourceSets.named("main") {
-            suppressGeneratedFiles.set(false)
+            suppressGeneratedFiles = false
             sourceLink {
-                localDirectory.set(file("src/main/kotlin"))
-                remoteUrl.set(java.net.URL("https://github.com/kotlin-orm/ktorm/blob/master/${project.name}/src/main/kotlin"))
-                remoteLineSuffix.set("#L")
+                localDirectory = file("src/main/kotlin")
+                remoteUrl = uri("https://github.com/kotlin-orm/ktorm/blob/master/${project.name}/src/main/kotlin").toURL()
+                remoteLineSuffix = "#L"
             }
         }
     }

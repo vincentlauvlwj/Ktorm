@@ -9,13 +9,13 @@ plugins {
 val jarSources by tasks.registering(Jar::class) {
     dependsOn("codegen")
     from(sourceSets.main.map { it.allSource })
-    archiveClassifier.set("sources")
+    archiveClassifier = "sources"
 }
 
 val jarJavadoc by tasks.registering(Jar::class) {
     dependsOn(tasks.dokkaJavadoc)
     from(tasks.dokkaJavadoc.flatMap { it.outputDirectory })
-    archiveClassifier.set("javadoc")
+    archiveClassifier = "javadoc"
 }
 
 publishing {
@@ -30,139 +30,139 @@ publishing {
             version = project.version.toString()
 
             pom {
-                name.set("${project.group}:${project.name}")
-                description.set("A lightweight ORM Framework for Kotlin with strong typed SQL DSL and sequence APIs.")
-                url.set("https://www.ktorm.org")
+                name = "${project.group}:${project.name}"
+                description = "A lightweight ORM Framework for Kotlin with strong typed SQL DSL and sequence APIs."
+                url = "https://www.ktorm.org"
                 licenses {
                     license {
-                        name.set("The Apache Software License, Version 2.0")
-                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                        name = "The Apache Software License, Version 2.0"
+                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
                     }
                 }
                 scm {
-                    url.set("https://github.com/kotlin-orm/ktorm")
-                    connection.set("scm:git:https://github.com/kotlin-orm/ktorm.git")
-                    developerConnection.set("scm:git:ssh://git@github.com/kotlin-orm/ktorm.git")
+                    url = "https://github.com/kotlin-orm/ktorm"
+                    connection = "scm:git:https://github.com/kotlin-orm/ktorm.git"
+                    developerConnection = "scm:git:ssh://git@github.com/kotlin-orm/ktorm.git"
                 }
                 developers {
                     developer {
-                        id.set("vincentlauvlwj")
-                        name.set("vince")
-                        email.set("me@liuwj.me")
+                        id = "vincentlauvlwj"
+                        name = "vince"
+                        email = "me@liuwj.me"
                     }
                     developer {
-                        id.set("waluo")
-                        name.set("waluo")
-                        email.set("1b79349b@gmail.com")
+                        id = "waluo"
+                        name = "waluo"
+                        email = "1b79349b@gmail.com"
                     }
                     developer {
-                        id.set("clydebarrow")
-                        name.set("Clyde")
-                        email.set("clyde@control-j.com")
+                        id = "clydebarrow"
+                        name = "Clyde"
+                        email = "clyde@control-j.com"
                     }
                     developer {
-                        id.set("Ray-Eldath")
-                        name.set("Ray Eldath")
-                        email.set("ray.eldath@outlook.com")
+                        id = "Ray-Eldath"
+                        name = "Ray Eldath"
+                        email = "ray.eldath@outlook.com"
                     }
                     developer {
-                        id.set("hangingman")
-                        name.set("hiroyuki.nagata")
-                        email.set("idiotpanzer@gmail.com")
+                        id = "hangingman"
+                        name = "hiroyuki.nagata"
+                        email = "idiotpanzer@gmail.com"
                     }
                     developer {
-                        id.set("onXoot")
-                        name.set("beetlerx")
-                        email.set("beetlerx@gmail.com")
+                        id = "onXoot"
+                        name = "beetlerx"
+                        email = "beetlerx@gmail.com"
                     }
                     developer {
-                        id.set("arustleund")
-                        name.set("Andrew Rustleund")
-                        email.set("andrew@rustleund.com")
+                        id = "arustleund"
+                        name = "Andrew Rustleund"
+                        email = "andrew@rustleund.com"
                     }
                     developer {
-                        id.set("afezeria")
-                        name.set("afezeria")
-                        email.set("zodal@outlook.com")
+                        id = "afezeria"
+                        name = "afezeria"
+                        email = "zodal@outlook.com"
                     }
                     developer {
-                        id.set("scorsi")
-                        name.set("Sylvain Corsini")
-                        email.set("sylvain.corsini@protonmail.com")
+                        id = "scorsi"
+                        name = "Sylvain Corsini"
+                        email = "sylvain.corsini@protonmail.com"
                     }
                     developer {
-                        id.set("lyndsysimon")
-                        name.set("Lyndsy Simon")
-                        email.set("lyndsy@lyndsysimon.com")
+                        id = "lyndsysimon"
+                        name = "Lyndsy Simon"
+                        email = "lyndsy@lyndsysimon.com"
                     }
                     developer {
-                        id.set("antonydenyer")
-                        name.set("Antony Denyer")
-                        email.set("git@antonydenyer.co.uk")
+                        id = "antonydenyer"
+                        name = "Antony Denyer"
+                        email = "git@antonydenyer.co.uk"
                     }
                     developer {
-                        id.set("mik629")
-                        name.set("Mikhail Erkhov")
-                        email.set("mikhail.erkhov@gmail.com")
+                        id = "mik629"
+                        name = "Mikhail Erkhov"
+                        email = "mikhail.erkhov@gmail.com"
                     }
                     developer {
-                        id.set("sinzed")
-                        name.set("Saeed Zahedi")
-                        email.set("saeedzhd@gmail.com")
+                        id = "sinzed"
+                        name = "Saeed Zahedi"
+                        email = "saeedzhd@gmail.com"
                     }
                     developer {
-                        id.set("smn-dv")
-                        name.set("Simon Schoof")
-                        email.set("simon.schoof@hey.com")
+                        id = "smn-dv"
+                        name = "Simon Schoof"
+                        email = "simon.schoof@hey.com"
                     }
                     developer {
-                        id.set("pedrod")
-                        name.set("Pedro Domingues")
-                        email.set("pedro.domingues.pt@gmail.com")
+                        id = "pedrod"
+                        name = "Pedro Domingues"
+                        email = "pedro.domingues.pt@gmail.com"
                     }
                     developer {
-                        id.set("efenderbosch")
-                        name.set("Eric Fenderbosch")
-                        email.set("eric@fender.net")
+                        id = "efenderbosch"
+                        name = "Eric Fenderbosch"
+                        email = "eric@fender.net"
                     }
                     developer {
-                        id.set("kocproz")
-                        name.set("Kacper Stasiuk")
-                        email.set("kocproz@pm.me")
+                        id = "kocproz"
+                        name = "Kacper Stasiuk"
+                        email = "kocproz@pm.me"
                     }
                     developer {
-                        id.set("2938137849")
-                        name.set("ccr")
-                        email.set("2938137849@qq.com")
+                        id = "2938137849"
+                        name = "ccr"
+                        email = "2938137849@qq.com"
                     }
                     developer {
-                        id.set("zuisong")
-                        name.set("zuisong")
-                        email.set("com.me@foxmail.com")
+                        id = "zuisong"
+                        name = "zuisong"
+                        email = "com.me@foxmail.com"
                     }
                     developer {
-                        id.set("svenallers")
-                        name.set("Sven Allers")
-                        email.set("sven.allers@gmx.de")
+                        id = "svenallers"
+                        name = "Sven Allers"
+                        email = "sven.allers@gmx.de"
                     }
                     developer {
-                        id.set("lookup-cat")
-                        name.set("夜里的向日葵")
-                        email.set("641571835@qq.com")
+                        id = "lookup-cat"
+                        name = "夜里的向日葵"
+                        email = "641571835@qq.com"
                     }
                     developer {
-                        id.set("michaelfyc")
-                        name.set("michaelfyc")
-                        email.set("michael.fyc@outlook.com")
+                        id = "michaelfyc"
+                        name = "michaelfyc"
+                        email = "michael.fyc@outlook.com"
                     }
                     developer {
-                        id.set("brohacz")
-                        name.set("Michal Brosig")
+                        id = "brohacz"
+                        name = "Michal Brosig"
                     }
                     developer {
-                        id.set("hc224")
-                        name.set("hc224")
-                        email.set("hc224@pm.me")
+                        id = "hc224"
+                        name = "hc224"
+                        email = "hc224@pm.me"
                     }
                 }
             }

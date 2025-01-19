@@ -36,24 +36,18 @@ tasks {
     compileKotlin {
         dependsOn(codegen)
 
-        kotlinOptions {
-            jvmTarget = "1.8"
+        compilerOptions {
+            jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8
             allWarningsAsErrors = true
             freeCompilerArgs = listOf("-Xexplicit-api=strict")
         }
     }
 
-    compileTestKotlin {
-        kotlinOptions {
-            jvmTarget = "1.8"
-        }
-    }
-
     jacocoTestReport {
         reports {
-            csv.required.set(true)
-            xml.required.set(true)
-            html.required.set(true)
+            csv.required = true
+            xml.required = true
+            html.required = true
         }
     }
 }
