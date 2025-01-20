@@ -164,6 +164,11 @@ publishing {
                         name = "hc224"
                         email = "hc224@pm.me"
                     }
+                    developer {
+                        id.set("qumn")
+                        name.set("qumn")
+                        email.set("2476573497@qq.com")
+                    }
                 }
             }
         }
